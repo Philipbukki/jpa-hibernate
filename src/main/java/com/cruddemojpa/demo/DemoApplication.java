@@ -7,6 +7,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+import java.util.List;
+
 @SpringBootApplication
 public class DemoApplication {
 
@@ -20,10 +22,10 @@ public class DemoApplication {
 //			saveStudent(studentDAO);
 //			createMultipleStudents(studentDAO);
 //			displayStudent(studentDAO);
-//			getByLastName(studentDAO);
+			getByLastName(studentDAO);
 //			updateStudent(studentDAO);
 //			deleteStudent(studentDAO);
-			deleteAllStudents(studentDAO);
+//			deleteAllStudents(studentDAO);
 
 		};
 
@@ -71,7 +73,11 @@ public class DemoApplication {
 
 	public void getByLastName(StudentDAO studentDAO){
 
-		studentDAO.findByLastName("Bukki");
+		List<Student> students = studentDAO.findByLastName("Bukki");
+
+		for(Student student: students){
+			System.out.println(student);
+		}
 	}
 
 	public void updateStudent(StudentDAO studentDAO){

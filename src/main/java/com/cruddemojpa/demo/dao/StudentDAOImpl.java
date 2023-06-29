@@ -40,8 +40,6 @@ public class StudentDAOImpl implements StudentDAO{
         List<Student> students = query.getResultList();
         return students;
 
-
-
     }
 
     @Override
